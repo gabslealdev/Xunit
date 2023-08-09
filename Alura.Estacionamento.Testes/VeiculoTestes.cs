@@ -8,8 +8,13 @@ public class VeiculoTestes
     [Fact]
     public void TestaVeiculoAcelerar()
     {
+        // Padrão AAA 
+          
+        // Arrange
         var veiculo = new Veiculo();
+        // Act
         veiculo.Acelerar(10);
+        // Assert
         Assert.Equal(100, veiculo.VelocidadeAtual);
     }
     [Fact]
