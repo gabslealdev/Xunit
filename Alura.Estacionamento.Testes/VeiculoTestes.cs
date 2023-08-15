@@ -1,4 +1,5 @@
 using Alura.Estacionamento;
+using Alura.Estacionamento.Alura.Estacionamento.Modelos;
 using Alura.Estacionamento.Modelos;
 using System.ComponentModel.DataAnnotations;
 
@@ -23,5 +24,19 @@ public class VeiculoTestes
         var veiculo = new Veiculo();
         veiculo.Frear(10);
         Assert.Equal(-150, veiculo.VelocidadeAtual);
+    }
+    [Fact]
+    public void DadosVeiculo()
+    {
+        var veiculo = new Veiculo();
+        veiculo.Proprietario = "Alfredo Guimarães";
+        veiculo.Tipo = TipoVeiculo.Automovel;
+        veiculo.Modelo = "Honda Civic";
+        veiculo.Placa = "ADA-8899";
+        veiculo.Cor = "Prata";
+
+        string dados = veiculo.ToString();
+
+        Assert.Contains("veiculo",dados);
     }
 }
